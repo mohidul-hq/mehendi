@@ -56,9 +56,7 @@ export async function PATCH(
 
     // Send status update email if status changed
     if (body.status && booking.customer) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const customer = booking.customer as any;
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const service = booking.service as any;
       if (customer?.email) {
         sendBookingStatusUpdate(

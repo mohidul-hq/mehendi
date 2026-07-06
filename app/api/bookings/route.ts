@@ -29,7 +29,6 @@ export async function GET(req: NextRequest) {
     const page = parseInt(searchParams.get("page") || "1");
     const limit = parseInt(searchParams.get("limit") || "20");
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const query: any = {};
     if (status && status !== "all") query.status = status;
     if (dateFrom || dateTo) {

@@ -124,7 +124,7 @@ export default function AdminSettingsPage() {
             </button>
           </div>
           <p className="text-sm text-gray-500 mb-6">
-            Configure your social links. These will appear in the website footer. The "WhatsApp" platform controls the floating chat button.
+            Configure your social links. These will appear in the website footer. The &quot;WhatsApp&quot; platform controls the floating chat button.
           </p>
 
           {settings.socialLinks.length === 0 ? (
