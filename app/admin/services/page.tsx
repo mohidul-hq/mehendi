@@ -40,7 +40,7 @@ export default function AdminServicesPage() {
   useEffect(() => { load(); }, []);
 
   function openNew() { setEditing(null); setForm(empty); setModal(true); }
-  function openEdit(s: Service) { setEditing(s); setForm({ ...s }); setModal(true); }
+  function openEdit(s: Service) { setEditing(s); setForm({ ...s, imageUrl: s.imageUrl || "" }); setModal(true); }
   function closeModal() { setModal(false); setEditing(null); }
 
   const set = (k: string, v: string | number | boolean) => setForm((p) => ({ ...p, [k]: v }));
