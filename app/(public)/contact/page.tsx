@@ -174,7 +174,7 @@ export default function ContactPage() {
                 />
               </div>
               <div>
-                <label className="label" htmlFor="contact-email">Email (optional)</label>
+                <label className="label" htmlFor="contact-email">Email (Recommended)</label>
                 <input
                   id="contact-email"
                   type="email"

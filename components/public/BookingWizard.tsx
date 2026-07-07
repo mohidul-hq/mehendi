@@ -368,7 +368,7 @@ export default function BookingWizard() {
               />
             </div>
             <div>
-              <label className="label" htmlFor="booking-email">Email (optional)</label>
+              <label className="label" htmlFor="booking-email">Email (Recommended)</label>
               <input
                 id="booking-email"
                 type="email"
