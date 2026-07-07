@@ -11,6 +11,7 @@ import {
   Clock,
   Star,
   Users,
+  Shield,
   LogOut,
   Menu,
   X,
@@ -27,6 +28,7 @@ const navItems = [
   { href: "/admin/availability", label: "Availability", icon: Clock },
   { href: "/admin/testimonials", label: "Testimonials", icon: Star },
   { href: "/admin/customers", label: "Customers", icon: Users },
+  { href: "/admin/admins", label: "Admins", icon: Shield },
   { href: "/admin/settings", label: "Settings", icon: SettingsIcon },
 ];
 

@@ -199,7 +199,7 @@ export default function BookingWizard() {
         )}
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <a
-            href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP || "923000000000"}?text=${encodeURIComponent(`Hi! I just booked a ${selectedService?.name} and wanted to confirm. Booking ref: #${bookingId.slice(-8).toUpperCase()}`)}`}
+            href={`https://wa.me/${(process.env.NEXT_PUBLIC_WHATSAPP || "923000000000").replace(/[^0-9]/g, '')}?text=${encodeURIComponent(`Hi! I just booked a ${selectedService?.name} and wanted to confirm. Booking ref: #${bookingId.slice(-8).toUpperCase()}`)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary bg-[#25D366] hover:bg-[#1da851] border-[#25D366]"
@@ -360,7 +360,7 @@ export default function BookingWizard() {
                 id="booking-phone"
                 type="tel"
                 className="input"
-                placeholder="+92 300 0000000"
+                placeholder="+91 300 0000000"
                 value={form.phone}
                 onChange={(e) => set("phone", e.target.value)}
                 inputMode="tel"

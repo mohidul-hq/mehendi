@@ -75,9 +75,9 @@ export default async function HomePage() {
 
   const displayServices = services.length > 0 ? services : fallbackServices;
   const displayTestimonials = testimonials.length > 0 ? testimonials : fallbackTestimonials;
-  const phone = settings?.phone || process.env.NEXT_PUBLIC_PHONE || "+923000000000";
+  const phone = settings?.phone || process.env.NEXT_PUBLIC_PHONE || "+913000000000";
   const whatsappLink = settings?.socialLinks?.find((l: any) => l.platform === "WhatsApp" && l.isActive);
-  const whatsapp = whatsappLink ? whatsappLink.url : (process.env.NEXT_PUBLIC_WHATSAPP || "923000000000");
+  const whatsapp = whatsappLink ? whatsappLink.url : (process.env.NEXT_PUBLIC_WHATSAPP || "913000000000");
 
   return (
     <>
@@ -302,7 +302,7 @@ export default async function HomePage() {
             </Link>
             {whatsappLink && (
               <a
-                href={`https://wa.me/${whatsapp}?text=${encodeURIComponent("Hi! I'd like to inquire about your mehndi services.")}`}
+                href={`https://wa.me/${whatsapp.replace(/[^0-9]/g, '')}?text=${encodeURIComponent("Hi! I'd like to inquire about your mehndi services.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-outline px-8 py-4 text-base"

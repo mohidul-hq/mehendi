@@ -104,7 +104,7 @@ export default function AboutPage() {
               Book an Appointment
             </Link>
             <a
-              href={`https://wa.me/${whatsapp}?text=${encodeURIComponent("Hi Taslima! I'd love to discuss my mehndi requirements.")}`}
+              href={`https://wa.me/${whatsapp.replace(/[^0-9]/g, '')}?text=${encodeURIComponent("Hi Taslima! I'd love to discuss my mehndi requirements.")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline"

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Phone, MessageCircle, Mail, MapPin, Send, Loader2, Star } from "lucide-react";
 import toast from "react-hot-toast";
 
-const PHONE = process.env.NEXT_PUBLIC_PHONE || "+923000000000";
+const PHONE = process.env.NEXT_PUBLIC_PHONE || "+913000000000";
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP || "923000000000";
 
 export default function ContactPage() {
@@ -115,7 +115,7 @@ export default function ContactPage() {
 
           {whatsappActive && (
             <a
-              href={`https://wa.me/${whatsapp}?text=${encodeURIComponent("Hi Taslima! I have a question about your services.")}`}
+              href={`https://wa.me/${whatsapp.replace(/[^0-9]/g, '')}?text=${encodeURIComponent("Hi Taslima! I have a question about your services.")}`}
               target="_blank"
               rel="noopener noreferrer"
               id="contact-whatsapp-btn"
@@ -167,7 +167,7 @@ export default function ContactPage() {
                   id="contact-phone"
                   type="tel"
                   className="input"
-                  placeholder="+92 300 0000000"
+                  placeholder="+91 300 0000000"
                   value={form.phone}
                   onChange={(e) => set("phone", e.target.value)}
                   inputMode="tel"
@@ -275,7 +275,7 @@ export default function ContactPage() {
         <div className="card p-0 overflow-hidden rounded-2xl">
           <iframe
             title="Taslima Mehendi Artist Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108861.97093716671!2d74.24048!3d31.5497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190483e58107d9%3A0xc23abe6ccc7e2462!2sLahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1699000000000!5m2!1sen!2s"
+            src="https://maps.google.com/maps?q=Taslima+Mehendi+Artist&t=&z=15&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="250"
             style={{ border: 0 }}

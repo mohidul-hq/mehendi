@@ -17,7 +17,7 @@ export default async function PublicLayout({
     console.error("Failed to load settings in layout", e);
   }
 
-  const phone = settings?.phone || process.env.NEXT_PUBLIC_PHONE || "+92-300-000-0000";
+  const phone = settings?.phone || process.env.NEXT_PUBLIC_PHONE || "+91-300-000-0000";
   const socialLinks = settings?.socialLinks?.filter((l: any) => l.isActive) || [];
   return (
     <div className="min-h-screen bg-cream-50">

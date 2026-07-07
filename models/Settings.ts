@@ -34,9 +34,9 @@ settingsSchema.statics.getSettings = async function () {
   if (!settings) {
     settings = await this.create({
       singletonId: "global",
-      phone: "+92 300 000 0000",
+      phone: "+91 300 000 0000",
       socialLinks: [
-        { platform: "WhatsApp", url: "923000000000", isActive: true },
+        { platform: "WhatsApp", url: "913000000000", isActive: true },
         { platform: "Instagram", url: "https://instagram.com/taslimamehendi", isActive: true },
       ],
     });

@@ -107,7 +107,7 @@ export default function AdminSettingsPage() {
             <input
               type="text"
               className="input"
-              placeholder="+92 300 1234567"
+              placeholder="+91 300 1234567"
               value={settings.phone}
               onChange={(e) => setSettings({ ...settings, phone: e.target.value })}
             />

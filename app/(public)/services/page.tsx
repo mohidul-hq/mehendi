@@ -187,7 +187,7 @@ export default function ServicesPage() {
           <p className="text-burgundy-900 font-medium">
             🎊 Group bookings for 5+ guests get special rates!{" "}
             <a
-              href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP || "923000000000"}?text=${encodeURIComponent("Hi! I'd like to inquire about group mehndi rates.")}`}
+              href={`https://wa.me/${(process.env.NEXT_PUBLIC_WHATSAPP || "923000000000").replace(/[^0-9]/g, '')}?text=${encodeURIComponent("Hi! I'd like to inquire about group mehndi rates.")}`}
               className="text-gold-600 underline font-bold hover:text-gold-700 transition-colors"
               target="_blank"
               rel="noopener noreferrer"

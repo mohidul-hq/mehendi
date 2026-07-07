@@ -29,7 +29,7 @@ export default function WhatsAppButton() {
 
   return (
     <a
-      href={`https://wa.me/${whatsapp}?text=${message}`}
+      href={`https://wa.me/${whatsapp.replace(/[^0-9]/g, '')}?text=${message}`}
       target="_blank"
       rel="noopener noreferrer"
       id="whatsapp-fab"

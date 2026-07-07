@@ -3,6 +3,8 @@ import mongoose, { Schema, Document, Model } from "mongoose";
 export interface IAdmin extends Document {
   email: string;
   passwordHash: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 const AdminSchema = new Schema<IAdmin>(
