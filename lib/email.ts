@@ -93,6 +93,7 @@ export async function sendBookingConfirmationToCustomer(
   await transporter.sendMail({
     from: process.env.EMAIL_FROM,
     to: data.customerEmail,
+    bcc: process.env.SECONDARY_ADMIN_EMAIL,
     subject: `Booking Received — ${data.serviceName} on ${data.date}`,
     html,
   });
@@ -112,6 +113,7 @@ export async function sendNewBookingAlertToAdmin(data: BookingEmailData) {
   await transporter.sendMail({
     from: process.env.EMAIL_FROM,
     to: process.env.ADMIN_EMAIL,
+    bcc: process.env.SECONDARY_ADMIN_EMAIL,
     subject: `New Booking: ${data.serviceName} — ${data.date}`,
     html,
   });
@@ -152,6 +154,7 @@ export async function sendBookingStatusUpdate(
   await transporter.sendMail({
     from: process.env.EMAIL_FROM,
     to: customerEmail,
+    bcc: process.env.SECONDARY_ADMIN_EMAIL,
     subject: `Booking Update — ${serviceName} on ${date}`,
     html: `
       <div style="font-family: Georgia, serif; max-width: 500px; margin: 0 auto; background: #FAF7F2; padding: 32px; border-radius: 16px;">
