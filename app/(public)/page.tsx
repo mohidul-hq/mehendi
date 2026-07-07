@@ -254,25 +254,39 @@ export default async function HomePage() {
             <h2 className="section-title">What Clients Say</h2>
             <p className="section-subtitle mx-auto">Real reviews from real brides and celebrations.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {displayTestimonials.slice(0, 3).map((t: {
-              _id: string;
-              name: string;
-              message: string;
-              rating: number;
-            }) => (
-              <div key={t._id} className="card">
-                <div className="flex mb-3">
-                  {Array.from({ length: t.rating }).map((_, i) => (
-                    <Star key={i} size={16} className="text-gold-500 fill-gold-500" />
-                  ))}
+          <div className="relative flex overflow-hidden group w-full py-4 -mx-4 px-4 sm:mx-0 sm:px-0">
+            {/* First Marquee Group */}
+            <div className="flex gap-6 animate-marquee min-w-full shrink-0 group-hover:[animation-play-state:paused] pr-6">
+              {[...displayTestimonials, ...displayTestimonials].map((t: any, idx: number) => (
+                <div key={`${t._id}-${idx}`} className="card w-[300px] md:w-[350px] shrink-0">
+                  <div className="flex mb-3">
+                    {Array.from({ length: t.rating || 5 }).map((_, i) => (
+                      <Star key={i} size={16} className="text-gold-500 fill-gold-500" />
+                    ))}
+                  </div>
+                  <p className="text-gray-600 italic text-sm leading-relaxed mb-4 whitespace-normal">
+                    &ldquo;{t.message}&rdquo;
+                  </p>
+                  <div className="font-semibold text-burgundy-900 whitespace-normal">— {t.name}</div>
                 </div>
-                <p className="text-gray-600 italic text-sm leading-relaxed mb-4">
-                  &ldquo;{t.message}&rdquo;
-                </p>
-                <div className="font-semibold text-burgundy-900">— {t.name}</div>
-              </div>
-            ))}
+              ))}
+            </div>
+            {/* Second Marquee Group (Clone for continuous scrolling) */}
+            <div aria-hidden="true" className="flex gap-6 animate-marquee min-w-full shrink-0 group-hover:[animation-play-state:paused] pr-6">
+              {[...displayTestimonials, ...displayTestimonials].map((t: any, idx: number) => (
+                <div key={`${t._id}-clone-${idx}`} className="card w-[300px] md:w-[350px] shrink-0">
+                  <div className="flex mb-3">
+                    {Array.from({ length: t.rating || 5 }).map((_, i) => (
+                      <Star key={i} size={16} className="text-gold-500 fill-gold-500" />
+                    ))}
+                  </div>
+                  <p className="text-gray-600 italic text-sm leading-relaxed mb-4 whitespace-normal">
+                    &ldquo;{t.message}&rdquo;
+                  </p>
+                  <div className="font-semibold text-burgundy-900 whitespace-normal">— {t.name}</div>
+                </div>
+              ))}
+            </div>
           </div>
           {/* Submit review CTA */}
           <div className="text-center mt-8">

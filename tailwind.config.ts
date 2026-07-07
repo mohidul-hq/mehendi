@@ -60,6 +60,7 @@ const config: Config = {
         shimmer: "shimmer 1.5s infinite",
         "pulse-slow": "pulse 3s infinite",
         float: "float 3s ease-in-out infinite",
+        marquee: "marquee 79s linear infinite",
       },
       keyframes: {
         fadeIn: {
@@ -81,6 +82,10 @@ const config: Config = {
         float: {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-10px)" },
+        },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-100%)" },
         },
       },
       backgroundImage: {
