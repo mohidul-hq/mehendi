@@ -32,8 +32,7 @@ export default function AdminLoginPage() {
       setLoading(false);
     } else {
       toast.success("Welcome back!");
-      router.push("/admin/dashboard");
-      router.refresh();
+      window.location.href = "/admin/dashboard";
     }
   }
 
